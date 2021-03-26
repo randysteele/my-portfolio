@@ -12,8 +12,8 @@ def __str__(self):
    return self.title
 
 
-def description(self):
-    return self.content
+# def description(self):
+#     return self.content
 
-def pub_date_pretty(self):
-  return self.pub_date.strftime('%b %e %Y')
+# def pub_date_pretty(self):
+#   return self.pub_date.strftime('%b %e %Y')

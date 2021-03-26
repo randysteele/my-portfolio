@@ -2,13 +2,14 @@
 <html lang="en">
 {% load static %}
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Randy Steele</title>
+    <title>Album example · Bootstrap v5.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
@@ -56,7 +57,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{%url 'home' %}">Randy Steele</a>
+                <a class="navbar-brand" href="#root/">Randy Steele</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -64,10 +65,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link" aria-current="page" href="https://twitter.com/RandySt02617967">Twitter</a>
-                        <a class="nav-link" href="https://linkedin.com/in/randysteele">LinkedIn</a>
+                        <a class="nav-link" aria-current="page" href="#">Twitter</a>
                         <a class="nav-link" href="/static/Randy%20Steele%20Resume.pdf">Resume</a>
-                        <a class="nav-link" href="https://dev.to/steelerx155">Blog</a>  
+                        <a class="nav-link active" href="#">Blog</a>
                     </div>
                 </div>
             </div>
@@ -75,48 +75,42 @@
     </header>
 
     <main>
+        <div class="container">
+        <h1 class="text-center pt-3">Welcome to Randy's Blog</h1> 
+        <br />
+        <br />
+        <h2>Latest Blog Posts</h2>
+        <hr />
 
-        <section class="py-5 text-center container">
-            <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Hi, I'm Randy.</h1>
-                    <p class="lead text-muted">Experienced in Ruby on Rails and JavaScript-based programming with a background in dispatching, customer service, accounts receivable, and accounts payable. Possess strong skills in communication, troubleshooting, and attention to detail. </p>
-                    <p>
-                        <a href="mailto:steelerx155@gmail.com" class="btn btn-primary my-2">Contact Me</a>
-                    </p>
-                    <img src="{% static 'profilephoto.jpg' %}" height=600>
-                </div>
-            </div>
-        </section>
-        <div class="album py-5 bg-light">
-            <div class="container">
-        
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                  {% for job in jobs.all %}
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img class="bd-placeholder-img card-img-top" src="{{job.image.url}}" width="100%" height="225" />
-                    <div class="card-body">
-                      <p class="card-text">{{job.summary}}</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <a href="{{job.github_url}}" type="button" class="btn btn-sm btn-outline-secondary">Github</a>
-                          <a href="{{job.heroku_url}}" type= "button" class="btn btn-sm btn-outline-secondary">Heroku</a>
-                        </div>
-                      </div>
-                    </div>                   
-                  </div>
-                </div>
-                {% endfor %}
-                </div>
-            </div>
+         <!-- {% for blog in blogs.all %} 
+         <a href=""><h3>{{ blog.title }}</h3></a>
+         {{ blog.pub_date }}
+         <br />  
+         <img class="img-fluid" src="{{ blog.image.url }}" height="200" width="200"/>
+         <br />
+         {{ blog.description }}
+         {% endfor %} -->
+         {% for blog in get_blogs %}
+         <img src="{{blog.cover_image}}" alt="">
+         <h4>{{blog.title}}</h4>
+         <p>{{blog.description}}</p>
+         <a href="{% url 'blog' blog.id %}">Read More...</a>
+         {% endfor %}
         </div>
+    </main>
+
     <footer class="text-muted py-5">
-        <div class="container text-center"><br />
+        <div class="container text-center">
             <p>©️ Randy Steele {% now "Y" %}</p>
+            
+            
         </div>
     </footer>
 
+
+    <!-- <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script> -->
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
