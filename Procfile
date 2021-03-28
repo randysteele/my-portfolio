@@ -1,1 +1,1 @@
-web: gunicorn WSGI_APPLICATION --workers 1
+web: gunicorn portfolio.wsgi:app --workers 1
