@@ -15,5 +15,4 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "portfolio.settings")
 
 application = get_wsgi_application()
 
-from app import app as application
-app = application
+
