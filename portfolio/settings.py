@@ -60,7 +60,7 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/html/mighty-chamber-43441.herokuapp.com'],
+        'DIRS': ['/jobs/home/html/mighty-chamber-43441.herokuapp.com'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
