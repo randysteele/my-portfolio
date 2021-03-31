@@ -61,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/jobs/home/html'],
+            '/jobs/home.html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
