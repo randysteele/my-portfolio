@@ -31,7 +31,7 @@ SECRET_KEY = 'u#6-9&ntw8#x#(ax=^z0tfc*1v^-0-@&m&#cjy^1-i5)_t&uef'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mighty-chamber-43441.herokuapp.com', 'https://mighty-chamber-43441.herokuapp.com/']
+ALLOWED_HOSTS = [ '0.0.0.0', 'localhost', '127.0.0.1','mighty-chamber-43441.herokuapp.com', 'https://mighty-chamber-43441.herokuapp.com']
 
 
 # Application definition
