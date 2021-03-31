@@ -217,7 +217,7 @@ DATABASES = {
         'NAME':'portfoliodb',
         'USER': 'randysteele',
         'PASSWORD':'rsteele',
-        'HOST': 'localhost'.
+        'HOST': 'localhost',
         'PORT': '5432'
     }
 }
