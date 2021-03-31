@@ -166,8 +166,8 @@ ALLOWED_HOSTS = [ '0.0.0.0', 'localhost', '127.0.0.1','mighty-chamber-43441.hero
 # Application definition
 
 INSTALLED_APPS = [
-    'blog.apps.AccountsConfig',
-    'jobs.apps.ContactsConfig',
+    'blog.apps.BlogConfig',
+    'jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
