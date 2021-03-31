@@ -25,7 +25,7 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'u#6-9&ntw8#x#(ax=^z0tfc*1v^-0-@&m&#cjy^1-i5)_t&uef'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mighty-chamber-43441.herokuapp.com']
 
@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'portfoliodb',
         'USER': 'postgres',
         'PASSWORD': 'Flatiron0920',
-        'HOST': 'localhost',
+        'HOST': 'mighty-chamber-43441.herokuapp.com',
         'PORT': '5430'
     }
 }
