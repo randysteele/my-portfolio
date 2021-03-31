@@ -94,7 +94,7 @@ DATABASES = {
         'USER': 'randysteele',
         'PASSWORD': 'Flatiron0920',
         'HOST': 'localhost',
-        'PORT': '5430',
+        'PORT': '5432',
     }
 }
 
