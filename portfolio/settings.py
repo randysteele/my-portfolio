@@ -87,11 +87,11 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.postgresql",
-        'NAME': "os.path.join(BASE_DIR, "db.postgresql"),
+        'NAME': "os.path.join(BASE_DIR, "db.postgresql)",
         'USER': 'postgres',
         'PASSWORD': 'Flatiron0920',
-        'HOST': '127.0.0.1',
-        'PORT': '8000'
+        'HOST': '',
+        'PORT': '',
     }
 }
 
