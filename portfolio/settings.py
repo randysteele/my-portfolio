@@ -11,17 +11,10 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import django_heroku
-import dj_database_url
-# import dj_database_url
-# django_heroku.settings(locals())
-# DATABASES['default'] = dj_database_url.config()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -67,8 +60,7 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            '/home.html'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,17 +81,14 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.postgresql",
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfoliodb',
         'USER': 'randysteele',
         'PASSWORD': 'Flatiron0920',
         'HOST': 'localhost',
-        'PORT': '5432',
+     
     }
 }
-
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -133,37 +122,18 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'portfolio/static'),
-)
-
-DATABASE_URL = 'postgresql://<postgresql>'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio/static')
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 MEDIA_URL = '/media/'
 
-# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-# os.sys.path.insert(0, os.path.join(BASE_DIR, 'app'))
-# Heroku: Update database configuration from $DATABASE_URL.
-# import dj_database_url
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
 
-django_heroku.settings(locals())
-
-try:
-    from .local_settings import *
-except ImportError:
-    pass
 
 
