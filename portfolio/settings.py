@@ -61,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/jobs/home.html'],
+            '/home.html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'portfoliodb',
         'USER': 'postgres',
         'PASSWORD': 'Flatiron0920',
-        'HOST': 'mighty-chamber-43441.herokuapp.com',
+        'HOST': 'localhost',
         'PORT': '5430'
     }
 }
