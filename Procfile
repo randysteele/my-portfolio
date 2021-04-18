@@ -1,1 +1,1 @@
-web: gunicorn portfolio.wsgi --log-file --workers 1 -   
+web: gunicorn portfolio.wsgi --log-file  -   
